@@ -11,10 +11,6 @@
 |
 */
 
-$app->get('/', function () use ($app) {
-    return $app->version();
-});
-
 $app->post('/login', 'LoginController@login');
 
 $app->group(['middleware' => 'session', 'prefix' => '{user}'], function () use ($app) {
